@@ -79,6 +79,7 @@ jobs:
   JMeter:
     name: "Test JMeter Action"
     runs-on: ubuntu-latest
+    needs: build-application
     steps:
       - uses: actions/checkout@v2
       - name: Run JMeter Action
@@ -86,7 +87,7 @@ jobs:
         with:
           testFilePath: test/performance/smallwindow21.jmx
           outputReportsFolder: reports/
-          args: "--loglevel INFO"
+          args: "--loglevel INFO -JMyProperty=Value --jmeterlogconf=log.conf"
       - uses: actions/upload-artifact@v1
         with:
           name: jmeter-test-results
