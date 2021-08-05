@@ -61,12 +61,12 @@ jobs:
     - name: Run TFLint compute module
       run: tflint --module compute -f compact 
   JMeter:
-    name: "Test JMeter Tests"
+    name: "Run JMeter Action"
     runs-on: ubuntu-latest
     needs: tflint
     steps:
       - uses: actions/checkout@v2
-      - name: Run JMeter Action
+      - name: Run JMeter Tests
         uses: rbhadti94/apache-jmeter-action@v0.3.2
         with:
           testFilePath: ./test/performance/smallwindow21.jmx
