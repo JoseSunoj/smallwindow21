@@ -69,7 +69,7 @@ jobs:
       - name: Run JMeter Action
         uses: rbhadti94/apache-jmeter-action@v0.3.1
         with:
-          testFilePath: test/performance/smallwindow21.jmx
+          testFilePath: ./test/performance/smallwindow21.jmx
           outputReportsFolder: reports/
           args: "--loglevel INFO -JMyProperty=Value --jmeterlogconf=log.conf"
       - uses: actions/upload-artifact@v1
