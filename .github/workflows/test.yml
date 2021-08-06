@@ -71,7 +71,7 @@ jobs:
         with:
           testFilePath: ./test/performance/smallwindow21.jmx
           outputReportsFolder: reports/
-          args: "-H my.proxy.server -P 8081"
+#           args: ""
       - uses: actions/upload-artifact@v1
         with:
           name: jmeter-test-results
